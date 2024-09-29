@@ -1,0 +1,83 @@
+{
+  "restaurant": {
+    "name": "The Gourmet Kitchen",
+    "address": {
+      "street": "123 Culinary Ave",
+      "city": "Foodville",
+      "state": "CA",
+      "zipCode": "98765"
+    },
+    "phone": "+1 (555) 123-4567",
+    "email": "info@gourmetkitchen.com",
+    "rating": 4.5,
+    "cuisine": "International",
+    "menu": [
+      {
+        "category": "Appetizers",
+        "items": [
+          {
+            "name": "Bruschetta",
+            "description": "Grilled bread with garlic, tomatoes, olive oil, and basil.",
+            "price": 7.99
+          },
+          {
+            "name": "Stuffed Mushrooms",
+            "description": "Mushrooms filled with cream cheese and herbs.",
+            "price": 9.99
+          }
+        ]
+      },
+      {
+        "category": "Main Courses",
+        "items": [
+          {
+            "name": "Grilled Salmon",
+            "description": "Salmon fillet grilled to perfection, served with lemon butter sauce.",
+            "price": 18.99
+          },
+          {
+            "name": "Ribeye Steak",
+            "description": "Juicy ribeye steak served with mashed potatoes and green beans.",
+            "price": 24.99
+          }
+        ]
+      },
+      {
+        "category": "Desserts",
+        "items": [
+          {
+            "name": "Cheesecake",
+            "description": "Classic cheesecake with a graham cracker crust and strawberry topping.",
+            "price": 6.99
+          },
+          {
+            "name": "Chocolate Lava Cake",
+            "description": "Warm chocolate cake with a molten chocolate center.",
+            "price": 7.99
+          }
+        ]
+      }
+    ],
+    "hours": {
+      "monday": "11:00 AM - 10:00 PM",
+      "tuesday": "11:00 AM - 10:00 PM",
+      "wednesday": "11:00 AM - 10:00 PM",
+      "thursday": "11:00 AM - 10:00 PM",
+      "friday": "11:00 AM - 11:00 PM",
+      "saturday": "12:00 PM - 11:00 PM",
+      "sunday": "12:00 PM - 9:00 PM"
+    },
+    "reviews": [
+      {
+        "user": "Alice",
+        "rating": 5,
+        "comment": "Amazing food and excellent service! Highly recommend the ribeye steak."
+      },
+      {
+        "user": "Bob",
+        "rating": 4,
+        "comment": "Great atmosphere and delicious desserts. The cheesecake is a must-try."
+      }
+    ]
+  }
+}

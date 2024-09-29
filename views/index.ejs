@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Restaurant</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="restaurant-details">
+            <!-- Title -->
+            <h1 class="title">
+                <%= data.restaurant.name %>
+            </h1>
+            <!-- Address including Phone, Email and Other related info-->
+            <div class="address-container">
+                <h3>
+                    <%= data.restaurant.address.street %>, <%= data.restaurant.address.city %>, <%=
+                                data.restaurant.address.state %>, <%= data.restaurant.address.zipCode %>, <%=
+                                        data.restaurant.phone %>, <%= data.restaurant.email %>
+                </h3>
+            </div>
+        </div>
+        <div class="menu-container">
+            <!-- Menu -->
+            <form action="/recipe" method="post" class="recipe-form">
+                <button type="submit" value="appetizers" name="choice">🍏<div class="category-name">
+                        <%= data.restaurant.menu[0].category %>
+                    </div></button>
+                <button type="submit" value="mainCourse" name="choice">🍽️<div class="category-name">
+                        <%= data.restaurant.menu[1].category %>
+                    </div></button>
+                <button type="submit" value="desserts" name="choice">🍮<div class="category-name">
+                        <%= data.restaurant.menu[2].category %>
+                    </div></button>
+            </form>
+
+            <!-- Recipe Details -->
+
+            <div class="restaurant-container">
+                <% if (locals.recipe) {%>
+                    <% recipe.items.forEach(item=> { %>
+                        <div class="menu-items">
+                            <h3>
+                                <%= item.name %>
+                            </h3>
+                            <ul>
+                                <li class="description">
+                                    <%= item.description %>
+                                </li>
+                                <li class="price">
+                                    <strong>Price:</strong>
+                                    <%= item.price %>
+                                </li>
+                            </ul>
+                        </div>
+                        <% }) %>
+                            <% } else {%>
+                                <h3 class="message">Please select an item from the Menu!"</h3>
+                                <% } %>
+            </div>
+
+            <!-- Working Hours -->
+
+            <div class="restaurant-hours">
+                <h2>Working Hours</h2>
+                <ul>
+                    <li><strong>Monday: </strong><%= hours.monday %>
+                    </li>
+                    <li><strong>Tuesday: </strong><%= hours.tuesday %>
+                    </li>
+                    <li><strong>Wednesday: </strong><%= hours.wednesday %>
+                    </li>
+                    <li><strong>Thursday: </strong><%= hours.thursday %>
+                    </li>
+                    <li><strong>Friday: </strong><%= hours.friday %>
+                    </li>
+                    <li><strong>Saturday: </strong><%= hours.saturday %>
+                    </li>
+                    <li><strong>Sunday: </strong><%= hours.sunday %>
+                    </li>
+                </ul>
+            </div>
+            <div class="reviews-container">
+                <% if (locals.reviews) {%>
+                    <% reviews.forEach(review=> { %>
+                        <div class="review-container">
+                            <ul class="users-review">
+                                <li class="user-name">
+                                     <%= review.user %>
+                                </li>
+                            </ul>
+                            <ul class="rating">
+                                    <% for( let rating = 0; rating < parseInt(review.rating); rating++ ) { %>
+                                        <li>⭐</li>
+                                    <% } %>
+                                </ul>
+                                <ul class="comment">
+                                    <li class="comment">
+                                    <em><%= review.comment %></em>
+                                </li>
+                            </ul>
+                        </div>
+                        <% }) %>
+                            <% } %>
+                <!-- Reviews -->
+                <footer></footer>
+            </div>
+        </div>
+</body>
+
+</html>
