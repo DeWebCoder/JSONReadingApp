@@ -77,6 +77,11 @@
         "user": "Bob",
         "rating": 4,
         "comment": "Great atmosphere and delicious desserts. The cheesecake is a must-try."
+      },
+      {
+        "user": "Sameer",
+        "rating": 5,
+        "comment": "Great atmosphere and delicious desserts. The cheesecake is a must-try."
       }
     ]
   }
